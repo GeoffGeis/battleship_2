@@ -12,7 +12,3 @@ class Board
     board.map { |row| puts row.join }
   end
 end
-
-b = Board.new
-b.get_user_input
-b.print_board

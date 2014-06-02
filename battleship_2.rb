@@ -10,4 +10,7 @@ class Battleship
     @ship = Ship.new
     game
   end
+
+  def game
+  end
 end
