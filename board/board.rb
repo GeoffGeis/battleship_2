@@ -1,14 +1,12 @@
 class Board
-  def initialize
-    @size = 0
-  end
+  attr_accessor :size, :board
 
-  def get_user_input
+  def initialize
     @size = gets.chomp.to_i
+    @board = (1..@size).map { |x| ["O"] * @size }
   end
 
   def print_board
-    board = (1..@size).map { |x| ["O"] * @size }
-    board.map { |row| puts row.join }
+    @board.map { |row| puts row.join }
   end
 end

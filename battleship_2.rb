@@ -7,7 +7,7 @@ class Battleship
   def initialize 
     @debug = true
     @board = Board.new
-    @ship = Ship.new
+    @ship = Ship.new(@board)
     game
   end
 
