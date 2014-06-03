@@ -1,8 +1,8 @@
 class Board
   attr_accessor :size, :board
 
-  def initialize
-    @size = gets.chomp.to_i
+  def initialize(size = gets.chomp.to_i)
+    @size = size
     @board = (1..@size).map { |x| ["O"] * @size }
   end
 
