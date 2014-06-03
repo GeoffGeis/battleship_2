@@ -9,6 +9,7 @@ class Battleship
     @proxi = Board.new(@board.size)
     @ship_count = gets.chomp.to_i
     @ships = (1..@ship_count).map { |i| i = Ship.new(@board) }
+    puts_ships
   end
 
   def puts_ships
