@@ -29,7 +29,6 @@ class Battleship
   def game
     turns = @board.size + @board.size
     turns += @ship_count
-    combo = false
     while turns > 0 
       @board.print_board
       puts "===== Turn #{turns.to_s} ====="
@@ -42,13 +41,8 @@ class Battleship
       elsif ["|", "-", " "].include?(@board.board[guess_row][guess_col])
         puts "You guessed that one already."
       elsif ["|", "-"].include?(@proxi.board[guess_row][guess_col])
-        if combo == true
-          puts "Combo breaker!"
-        else  
-          puts "Congratulations! Hit!"
-        end
+        puts "Congratulations! Hit!"
         @board.board[guess_row][guess_col] = @proxi.board[guess_row][guess_col]
-        combo = true
         if @board.board == @proxi.board
           break
         end
@@ -57,7 +51,6 @@ class Battleship
         @board.board[guess_row][guess_col] = " "
         @proxi.board[guess_row][guess_col] = " "
         turns -= 1
-        combo = false
       end
     end
     if @board.board == @proxi.board
