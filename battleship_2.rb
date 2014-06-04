@@ -43,9 +43,7 @@ class Battleship
       elsif ["|", "-"].include?(@proxi.board[guess_row][guess_col])
         puts "Congratulations! Hit!"
         @board.board[guess_row][guess_col] = @proxi.board[guess_row][guess_col]
-        if @board.board == @proxi.board
-          break
-        end
+        break if @board.board == @proxi.board
       else
         puts "You missed my battleship!"
         @board.board[guess_row][guess_col] = " "
